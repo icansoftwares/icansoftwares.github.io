@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>I Can Softwares</title>
+    <meta name="description" content="Find usernames across social networks">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link href="css/main.79d94709ddffbca5da5c.css" rel="stylesheet"></head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <section id="home">
+        <style>
+            .github-corner:hover .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+
+            @keyframes octocat-wave {
+
+                0%,
+                100% {
+                    transform: rotate(0)
+                }
+
+                20%,
+                60% {
+                    transform: rotate(-25deg)
+                }
+
+                40%,
+                80% {
+                    transform: rotate(10deg)
+                }
+            }
+
+            @media (max-width:500px) {
+                .github-corner:hover .octo-arm {
+                    animation: none
+                }
+
+                .github-corner .octo-arm {
+                    animation: octocat-wave 560ms ease-in-out
+                }
+            }
+        </style>
+
+        <div class="container home__content">
+            <div class="row head__holder">
+                <div class="col-md-12 text-center head__holder--inner">
+                    <h2 class="head__title">I Can Sotwares</h2>
+                </div>
+            </div>
+            <form class="pt-20 form__holder" id="form__input">
+                <div class="form-row justify-content-center form__holder--inner">
+                    <div class="form-group col-md-6 form__holder--input">
+                        <input type="text" class="form-control" id="username__holder" placeholder="Username"
+                            autocomplete="off" spellcheck="false" required>
+                    </div>
+                </div>
+                <div class="form-group row text-center submit__button--holder">
+                    <div class="col-md-12 submit__button--inner">
+                        <button type="button" class="btn btn-primary username__submit--button">Search now</button>
+                    </div>
+                </div>
+            </form>
+
+            <form class="pt-20 form__holder" onsubmit="return onLinkedInSubmit();">
+                <div class="form-row justify-content-center form__holder--inner">
+                    <div class="form-group col-md-6 form__holder--input">
+                        <input type="email" class="form-control" id="useremail" placeholder="Email"
+                            autocomplete="off" spellcheck="false" required>
+                    </div>
+                </div>
+                <div class="form-group row text-center submit__button--holder">
+                    <div class="col-md-12 submit__button--inner">
+                        <button type="submit" class="btn btn-primary">Linked In Search</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="row justify-content-center pt-5 text-center">
+                <div class="col-md-6 d-none" id="progress__spinner">
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                    <span>Searching...</span>
+                    <p class="pt-3">Found <span id="found__counter">0</span> so far</p>
+                </div>
+                <div class="col-md-6 d-none" id="end__results">
+                    <p><span id="total__sites--found">10</span> Results found from <span
+                            id="total__sites--all">20</span>
+                        websites.</p>
+                </div>
+            </div>
+
+            <!-- CARDS -->
+            <div class="row justify-content-center align-items-center social__sites--holder">
+
+                <!--500px-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="500px"><i class="fab fa-500px"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">500px</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--9GAG-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="9GAG">
+                            <p class="social__logo--text py-2-5 my-1">9GAG</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">9GAG</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--About.me-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Aboutme"><img class="card-img-top py-2-8 px-2"
+                                src="img/aboutme_logo_white_1024.png"></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">About.me</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Academia-edu-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Academia-edu">
+                            <p class="social__logo--text py-2-5 my-1">Academia.edu</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Academia.edu</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Aptoide-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Aptoide">
+                            <p class="social__logo--text py-2-5 my-1">Aptoide</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Aptoide</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--AskFM-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="AskFM">
+                            <p class="social__logo--text py-2-5 my-1">AskFM</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">AskFM</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--BLIP-fm-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="BLIP-fm">
+                            <p class="social__logo--text py-2-5 my-1">BLIP.fm</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">BLIP.fm</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Badoo-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Badoo">
+                            <p class="social__logo--text py-2-5 my-1">Badoo</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Badoo</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Bandcamp-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Bandcamp"><i class="fab fa-bandcamp"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Bandcamp</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Basecamp-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Basecamp">
+                            <p class="social__logo--text py-2-5 my-1">Basecamp</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Basecamp</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Behance-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Behance"><i class="fab fa-behance"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Behance</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--BitBucket-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="BitBucket"><i class="fab fa-bitbucket"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">BitBucket</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Blogger-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Blogger"><i class="fab fa-blogger"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Blogger</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--BuzzFeed-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="BuzzFeed">
+                            <p class="social__logo--text py-2-5 my-1">BuzzFeed</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">BuzzFeed</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Canva-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Canva">
+                            <p class="social__logo--text py-2-5 my-1">Canva</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Canva</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Carbonmade-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Carbonmade">
+                            <p class="social__logo--text py-2-5 my-1">Carbonmade</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Carbonmade</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--CashMe-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="CashMe">
+                            <p class="social__logo--text py-2-5 my-1">CashMe</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">CashMe</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Cloob-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Cloob">
+                            <p class="social__logo--text py-2-5 my-1">Cloob</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Cloob</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Codecademy-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Codecademy">
+                            <p class="social__logo--text py-2-5 my-1">Codecademy</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Codecademy</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Codementor-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Codementor">
+                            <p class="social__logo--text py-2-5 my-1">Codementor</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Codementor</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Codepen-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Codepen"><i class="fab fa-codepen"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Codepen</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Coderwall-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Coderwall">
+                            <p class="social__logo--text py-2-5 my-1">Coderwall</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Coderwall</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--ColourLovers-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="ColourLovers">
+                            <p class="social__logo--text py-2-5 my-1">ColourLovers</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">ColourLovers</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Contently-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Contently">
+                            <p class="social__logo--text py-2-5 my-1">Contently</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Contently</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Coroflot-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Coroflot">
+                            <p class="social__logo--text py-2-5 my-1">Coroflot</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Coroflot</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Crevado-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Crevado">
+                            <p class="social__logo--text py-2-5 my-1">Crevado</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Crevado</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Crunchyroll-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Crunchyroll">
+                            <p class="social__logo--text py-2-5 my-1">Crunchyroll</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Crunchyroll</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--DailyMotion-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="DailyMotion">
+                            <p class="social__logo--text py-2-5 my-1">DailyMotion</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">DailyMotion</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Designspiration-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Designspiration">
+                            <p class="social__logo--text py-2-5 my-1">Designspiration</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Designspiration</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--DeviantART-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="DeviantART"><i class="fab fa-deviantart"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">DeviantART</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Disqus-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Disqus"><img class="card-img-top py-2-8 px-2"
+                                src="img/disqus-logo-light.svg"></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Disqus</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Dribbble-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Dribbble"><i class="fab fa-dribbble"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Dribbble</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Ebay-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Ebay"><i class="fab fa-ebay"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Ebay</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Ello-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Ello">
+                            <p class="social__logo--text py-2-5 my-1">Ello</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Ello</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Etsy-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Etsy"><i class="fab fa-etsy"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Etsy</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Facebook-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Facebook</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Flickr-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Flickr"><i class="fab fa-flickr"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Flickr</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Flipboard-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Flipboard"><i class="fab fa-flipboard"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Flipboard</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Foursquare-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Foursquare"><i class="fab fa-foursquare"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Foursquare</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Giphy-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Giphy">
+                            <p class="social__logo--text py-2-5 my-1">Giphy</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Giphy</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Gitee-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Gitee">
+                            <p class="social__logo--text py-2-5 my-1">Gitee</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Gitee</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--GitHub-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="GitHub"><i class="fab fa-github"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">GitHub</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--GitLab-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="GitLab"><i class="fab fa-gitlab"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">GitLab</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--GoodReads-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="GoodReads"><i class="fab fa-goodreads"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">GoodReads</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--GooglePlus-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="GooglePlus"><i
+                                class="fab fa-google-plus-g"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Google +</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Gravatar-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Gravatar">
+                            <p class="social__logo--text py-2-5 my-1">Gravatar</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Gravatar</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Gumroad-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Gumroad">
+                            <p class="social__logo--text py-2-5 my-1">Gumroad</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Gumroad</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--HackerNews-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="HackerNews"><i
+                                class="fab fa-hacker-news"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">HackerNews</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--HackerOne-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="HackerOne">
+                            <p class="social__logo--text py-2-5 my-1">HackerOne</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">HackerOne</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--House-Mixes-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="House-Mixes">
+                            <p class="social__logo--text py-2-5 my-1">House-Mixes</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">House-Mixes</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--HubPages-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="HubPages">
+                            <p class="social__logo--text py-2-5 my-1">HubPages</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">HubPages</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Imgur-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Imgur">
+                            <p class="social__logo--text py-2-5 my-1">imgur</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Imgur</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Instagram-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Instagram"><i class="fab fa-instagram"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Instagram</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Instructables-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Instructables">
+                            <p class="social__logo--text py-2-5 my-1">Instructables</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Instructables</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Keybase-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Keybase"><i class="fab fa-keybase"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Keybase</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Kongregate-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Kongregate">
+                            <p class="social__logo--text py-2-5 my-1">Kongregate</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Kongregate</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--lastfm-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="lastfm"><i class="fab fa-lastfm"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">lastfm</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--LiveJournal-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="LiveJournal">
+                            <p class="social__logo--text py-2-5 my-1">LiveJournal</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">LiveJournal</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Medium-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Medium"><i class="fab fa-medium"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Medium</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Patreon-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Patreon"><i class="fab fa-patreon"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Patreon</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Reddit-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Reddit"><i class="fab fa-reddit"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Reddit</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Roblox-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Roblox">
+                            <p class="social__logo--text py-2-5 my-1">Roblox</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Roblox</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Scribd-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Scribd"><i class="fab fa-scribd"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Scribd</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--SlideShare-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="SlideShare"><i class="fab fa-slideshare"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">SlideShare</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--SoundCloud-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">SoundCloud</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Spotify-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Spotify"><i class="fab fa-spotify"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Spotify</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Steam-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Steam"><i class="fab fa-steam"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Steam</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Twitter -->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Twitter"><i class="fab fa-twitter"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Twitter</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Vimeo-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Vimeo</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--VK-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="VK"><i class="fab fa-vk"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">VK</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--VSCO-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="VSCO">
+                            <p class="social__logo--text py-2-5 my-1">VSCO</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">VSCO</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--YouTube-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="YouTube"><i class="fab fa-youtube"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">YouTube</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+<script type="text/javascript" src="main.js"></script></body>
+
+<script type="text/javascript">
+    function onLinkedInSubmit(e) {
+      const email = document.getElementById('useremail').value;
+      window.open(`https://www.linkedin.com/sales/gmail/profile/proxy/${email}`, '_blank');
+    }
+</script>
+
+</html>
